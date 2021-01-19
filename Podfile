@@ -6,6 +6,7 @@ target 'My Movie' do
   use_frameworks!
 
   # Pods for My Movie
+    pod 'SwiftyGif'
   
   # add the Firebase pod for Google Analytics
     pod 'Firebase/Analytics'
@@ -18,6 +19,8 @@ target 'My Movie' do
 
     # add Cloud Firebase
     pod 'Firebase/Core'
+    pod 'Firebase/Storage'
+    pod 'Firebase/Database'
     pod 'Firebase/Firestore'
 
 end

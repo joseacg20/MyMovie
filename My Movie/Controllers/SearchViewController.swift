@@ -6,17 +6,30 @@
 //
 
 import UIKit
-import Firebase
+import SwiftUI
 
 class SearchViewController: UIViewController {
-
+    fileprivate let contentView = UIHostingController(rootView: MovieSearchView())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        self.title = "Buscar"
-        
-        // Colocar una imagen en el NavigationController
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "Background.png")?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch), for: .default)
+        septupHC()
+        septupConstrains()
+    }
+    
+    fileprivate func septupConstrains() {
+        contentView.view.translatesAutoresizingMaskIntoConstraints = false
+        contentView.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        contentView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        contentView.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        contentView.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+
+    }
+    
+    fileprivate func septupHC() {
+        addChild(contentView)
+        view.addSubview(contentView.view)
+        contentView.didMove(toParent: self)
     }
 }
